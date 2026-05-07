@@ -13,10 +13,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/isairey/homehost?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/isairey/homehost?style=for-the-badge" />
-  <img src="https://img.shields.io/github/license/isairey/homehost?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/isairey/homehost?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/isairey/PlataformaMultimedia?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/isairey/PlataformaMultimedia?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/isairey/PlataformaMultimedia?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/isairey/PlataformaMultimedia?style=for-the-badge" />
 </p>
 
 ---
