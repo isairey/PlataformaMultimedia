@@ -1,7 +1,7 @@
-<p align="center">
+<!--<p align="center">
   <img src="https://github.com/isairey.png" width="140" style="border-radius:50%;" alt="Isai Reyes Avatar" />
 </p>
-
+-->
 <h1 align="center">🏠 HomeHost</h1>
 
 <p align="center">
