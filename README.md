@@ -1,207 +1,221 @@
-<h2 align="center"> homehost </h2>
+<p align="center">
+  <img src="https://github.com/isairey.png" width="140" style="border-radius:50%;" alt="Isai Reyes Avatar" />
+</p>
 
-<h3 align="center"> homehost is made for streaming your media collection within the home network </h3>
-<h4 align="center"> Features: 🎥 Movies, 📺 TV Shows, 🎵 Music </h4>
+<h1 align="center">🏠 HomeHost</h1>
 
-- [🎥 Movies](#-movies)
-- [📺 TV Shows](#-tv-shows)
-- [🎵 Music](#-music)
-- [⚙️ Setup](#%EF%B8%8F-setup)
-  - [Naming conventions](#naming-conventions)
-  - [Database](#database)
-  - [Run](#run)
-  - [Routes](#routes)
-    - [Server-side](#server-side)
-    - [Client-side](#client-side)
-- [Development](#development)
-- [Powered by](#powered-by)
-- [License](#license)
-- [Disclaimer](#disclaimer)
-  - [General Copyright Statement](#general-copyright-statement)
+<p align="center">
+  <strong>Servidor multimedia moderno para streaming de películas, series y música dentro de tu red local.</strong>
+</p>
 
-## 🎥 Movies
+<p align="center">
+  Desarrollado por <b>Isai Reyes</b>
+</p>
 
-### Home
+<p align="center">
+  <img src="https://img.shields.io/github/stars/isairey/homehost?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/isairey/homehost?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/isairey/homehost?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/isairey/homehost?style=for-the-badge" />
+</p>
 
-![movies_1](docs/public/movies_1.png)
+---
 
-### Search
+# 📖 Descripción
 
-![movies_2](docs/public/movies_2.png)
+**HomeHost** es una plataforma multimedia self-hosted diseñada para transmitir tu colección personal de:
 
-## 📺 TV Shows
+- 🎥 Películas
+- 📺 Series
+- 🎵 Música
 
-### Home
+directamente desde tu computadora o servidor hacia cualquier dispositivo conectado dentro de tu red local mediante una interfaz web moderna y rápida.
 
-![tv](docs/public/tv_1.png)
+---
 
-## 🎵 Music
+# ✨ Características
 
-### Home
+## 🎥 Películas
 
-![music](docs/public/music_1.png)
+- Biblioteca organizada automáticamente
+- Búsqueda inteligente
+- Portadas y metadata automática
+- Géneros y recomendaciones
+- Películas populares y mejor calificadas
 
-### Search
+---
 
-![music](docs/public/music_2.png)
+## 📺 Series
 
-### Album
+- Organización automática por temporadas
+- Reproducción de episodios
+- Metadata enriquecida desde TMDb
+- Navegación moderna tipo streaming platform
 
-![music](docs/public/music_3.png)
+---
 
-## ⚙️ Setup
+## 🎵 Música
 
-Run `npm run install-packages`
+- Álbumes y artistas
+- Streaming FLAC y MP3
+- Integración con Spotify API
+- Búsqueda avanzada
+- Portadas automáticas
+- Reproducción instantánea
 
-In `.env`, set a working API key for TMDb API and Spotify Web API, set the media paths, and set tha base url of the homehost client
+---
 
-######
+# 🖼️ Capturas de pantalla
 
-```env
-# packages/client/.env
-REACT_APP_HOMEHOST_BASE = "http://localhost:5000"
-REACT_APP_IMAGE_BASE = "https://image.tmdb.org/t/p/"
-REACT_APP_IMDB_BASE = "https://www.imdb.com"
+## 🎥 Películas
 
-# packages/server/.env
-TMDB_KEY = '<api_key>'
-SPOTIFY_CLIENT_ID = '<client_id>'
-SPOTIFY_CLIENT_SECRET = '<client_secret>'
+![Movies](docs/public/movies_1.png)
 
-MOVIES_PATH = '/path/to/movies/directory'
-TV_PATH = '/path/to/tv/directory'
-MUSIC_PATH = '/path/to/music/directory'
+---
 
-DATABASE_URL = 'file:./data/media.db'
-CLIENT_BASE_URL = 'http://localhost:3000'
-```
+## 🔎 Buscador
 
-If you dont have keys, you can request API authorization from Spotify at https://developer.spotify.com/documentation/web-api/, and TMDb at https://developers.themoviedb.org/3/getting-started/introduction
+![Search](docs/public/movies_2.png)
 
-### Media
+---
 
-Your media must appear in the absolute path locations set by `.env`. Each media must be in a unique location and cannot share the same directory path(s)  
+## 📺 Series
 
-#### Naming conventions
+![TV](docs/public/tv_1.png)
 
-🎥 **Movies**
+---
 
-```
-<movies_path>
-- (subdirectory)?
-  - (movie_file_name <TMDb-movie-ID>) (.mp4|.mkv)
-```
+## 🎵 Música
 
-📺 **TV**
+![Music](docs/public/music_1.png)
 
-```
-<tv_path>
-- (tv_show_directory_name <TMDb-tv-show-ID>)
-  - (S<season_number>E<episode_number> episode_file_name) (.mp4|.mkv)
-```
+---
 
-🎵 **Music**
+# 🛠️ Tecnologías utilizadas
 
-```
-<music_path>
-- (album_directory_name <Spotify-album-ID>)
-  - ((<disc_number>-)?<track_number> track_file_name) (.mp3|.flac)
-```
+<p align="center">
 
-Tracks not found on Spotify can be put in a directory titled `Unknown Album` sans disc/ track number
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 
-```
-<music_path>
-- Unknown Album
-  - (track_file_name) (.mp3|.flac)
-```
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
 
-### Database
-  
-Run `npm run db:migrate` to create migrations from schema, apply them, generate the database client  
-_homehost_ scans the media paths and adds the files to the database  
-Wait for the async job to finish generating metadata and save  
-To browse data, run `npm run db:browse` and go to `http://localhost:5555`  
-To clear all data, run `npm run db:clear`
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
 
-### Run
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
 
-Run `npm run start` to start the application  
-By default, the server port is `5000`, client port is `3000`  
-Run `npm run start:prod` to start the application as prod (default port is `5000`)  
-While running, _homehost_ continuously saves and retrieves information for any media that was added, moved or removed
+<img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
 
-### Routes
+<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
 
-#### Server-side
- 
-**GET**  
-`/api/about`  
-`/api/library/stats`  
-`/api/not_available`  
-`/api/movies`  
-`/api/movies/most_popular`  
-`/api/movies/highest_rated`  
-`/api/movies/recently_added`  
-`/api/movies/genres`  
-`/api/movies/genre/:name`  
-`/api/movies/random`  
-`/api/movies/:id`  
-`/api/tv`  
-`/api/tv/most_popular`  
-`/api/tv/highest_rated`  
-`/api/tv/recently_added`  
-`/api/tv/genres`  
-`/api/tv/genre/:name`  
-`/api/tv/random`  
-`/api/tv/:id`  
-`/api/music/albums/recently_added`  
-`/api/music/albums/latest`  
-`/api/music/artists`  
-`/api/music/artists/most_popular`  
-`/api/music/albums`  
-`/api/music/albums/:id`  
-`/api/music/songs`  
-`/api/music/songs/recently_added`  
-`/movies/:id`  
-`/tv/:tv_show_id/:season_number/:episode_number`  
-`/music/:album_id/:disc_number/:track_number`  
-`/api/watch/search`  
-`/api/listen/search`  
-`/api/watch/billboard`
+<img src="https://img.shields.io/badge/Spotify_API-1DB954?style=for-the-badge&logo=spotify&logoColor=white" />
 
-#### Client-side
+<img src="https://img.shields.io/badge/TMDB-01B4E4?style=for-the-badge&logo=themoviedatabase&logoColor=white" />
 
-`/movies`, `/tv`, `/music`
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 
-## Development
+</p>
 
-Works best in <img src="docs/public/Chrome.svg" width="16" height="16" title="Google Chrome"> Chrome. Coming to Desktop, iOS, Android.
+---
 
-## Powered by
+# ⚙️ Instalación
 
-<p><img src="docs/public/Spotify_Green.svg" width="200" height="150" title="Spotify Web API">&emsp;<img src="docs/public/TMDB_Green.svg" width="150" height="150" title="TMDb API"></p>
+# 🔹 Clonar el repositorio
 
-## Contributing
+```bash
+git clone https://github.com/isairey/homehost.git
+cd homehost
+🔹 Instalar dependencias
+npm run install-packages
+🔹 Configurar variables de entorno
 
-See [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+Crear los archivos .env necesarios:
 
-## License
+# CLIENT
+REACT_APP_HOMEHOST_BASE="http://localhost:5000"
+REACT_APP_IMAGE_BASE="https://image.tmdb.org/t/p/"
+REACT_APP_IMDB_BASE="https://www.imdb.com"
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+# SERVER
+TMDB_KEY="YOUR_TMDB_KEY"
 
-## Disclaimer
+SPOTIFY_CLIENT_ID="YOUR_CLIENT_ID"
+SPOTIFY_CLIENT_SECRET="YOUR_CLIENT_SECRET"
 
-All pictures copyright to their respective owner(s). This project does not claim ownership of any of the pictures displayed on this site unless stated otherwise. This project does not knowingly intend or attempt to offend or violate any copyright or intellectual property rights of any entity. Some images used on this project are taken from the web and believed to be in the public domain. In addition, to the best of this project's knowledge, all content, images, photos, etc., if any, are being used in compliance with the Fair Use Doctrine (Copyright Act of 1976, 17 U.S.C. § 107.) The pictures are provided for comment/criticism/news reporting/educational purposes only.
+MOVIES_PATH="/path/to/movies"
+TV_PATH="/path/to/tv"
+MUSIC_PATH="/path/to/music"
 
-Where every care has been taken to ensure the accuracy of the contents of this project, we do not warrant its completeness, quality and accuracy, nor can we guarantee that it is up-to-date. We will not be liable for any consequences arising from the use of, or reliance on, the contents of this project. The respective owners are exclusively responsible for external websites. This project accepts no liability of the content of external links.
+DATABASE_URL="file:./data/media.db"
 
-Our project follows the safe harbor provisions of 17 U.S.C. §512, otherwise known as Digital Millennium Copyright Act (“DMCA”).
+CLIENT_BASE_URL="http://localhost:3000"
+🚀 Ejecutar la aplicación
+Desarrollo
+npm run start
+Puertos por defecto
+Servicio	Puerto
+Client	3000
+Server	5000
+Producción
+npm run start:prod
+🗄️ Base de datos
+Crear migraciones
+npm run db:migrate
+Explorar base de datos
+npm run db:browse
 
-If any images posted here are in violation of copyright law, please contact us and we will gladly remove the offending images immediately upon receipt of valid proof of copyright infringement.
+Abrir:
 
-### General Copyright Statement
+http://localhost:5555
+Limpiar base de datos
+npm run db:clear
+📂 Organización multimedia
+🎥 Películas
+Movies/
+ └── Movie Name <TMDB-ID>.mkv
+📺 Series
+TV/
+ └── Show Name <TMDB-ID>/
+      └── S01E01 Episode.mkv
+🎵 Música
+Music/
+ └── Album Name <Spotify-ID>/
+      └── 01 Song.mp3
+🌐 API Routes
+🎥 Películas
+GET /api/movies
+GET /api/movies/:id
+GET /api/movies/genres
+GET /api/movies/random
+📺 Series
+GET /api/tv
+GET /api/tv/:id
+GET /api/tv/genres
+🎵 Música
+GET /api/music/albums
+GET /api/music/artists
+GET /api/music/songs
+🐳 Docker
+Ejecutar rápidamente con Docker
+docker compose up
+📊 Roadmap
+ Aplicación móvil Android/iOS
+ Descarga offline
+ Multiusuario
+ Streaming remoto
+ Integración con Chromecast
+ Sistema de recomendaciones
+ Temas personalizados
+ Aplicación de escritorio
+🤝 Contribuciones
 
-Most of the sourced material is posted according to the “fair use” doctrine of copyright law for non-commercial news reporting, education and discussion purposes. We comply with all takedown requests.
+Las contribuciones son bienvenidas.
 
-You may not use the Service for any illegal or unauthorized purpose. You must not, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright or trademark laws).
+Pasos
+git checkout -b feature/nueva-funcion
+git commit -m "Nueva funcionalidad"
+git push origin feature/nueva-funcion
+
+Luego abre un Pull Request 🚀
+
+👨‍💻 Autor
+<p align="center"> <img src="https://github.com/isairey.png" width="120" style="border-radius:50%;" /> </p> <p align="center"> <b>Isai Reyes</b> </p> <p align="center"> Desarrollador Full Stack apasionado por el streaming multimedia, servidores self-hosted y aplicaciones modernas. </p>
