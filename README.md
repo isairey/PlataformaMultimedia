@@ -122,8 +122,8 @@ directamente desde tu computadora o servidor hacia cualquier dispositivo conecta
 ## 🔹 Clonar el repositorio
 
 ```bash
-git clone https://github.com/isairey/homehost.git
-cd homehost
+git clone https://github.com/isairey/PlataformaMultimedia.git
+cd PlataformaMultimedia
 ```
 ## 🔹 Instalar dependencias
 ```
