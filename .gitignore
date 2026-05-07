@@ -1,0 +1,20 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# server
+_demo/
+**/*.db
+**/*.db-journal
+
+# client
+build/
+
+# docs 
+.next/
+
+# common
+.env
+node_modules/
+
+# misc
+.DS_Store
+*Zone.Identifier
