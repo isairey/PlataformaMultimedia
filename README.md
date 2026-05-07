@@ -207,7 +207,7 @@ Music/
 ---
 
 # 🌐 API Routes
-
+```
 🎥 Películas
 GET /api/movies
 GET /api/movies/:id
@@ -224,7 +224,7 @@ GET /api/music/songs
 🐳 Docker
 Ejecutar rápidamente con Docker
 docker compose up
-
+```
 ---
 
 # 📊 Roadmap
