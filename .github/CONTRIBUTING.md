@@ -1,55 +1,154 @@
-# Contributing
+# 🤝 Guía de Contribución
+
+¡Gracias por tu interés en contribuir a este proyecto! 🚀  
+Toda ayuda es bienvenida, ya sea reportando errores, mejorando el código, optimizando la interfaz o proponiendo nuevas funcionalidades.
 
 ---
 
-## Table of Contents
+# 📚 Tabla de Contenidos
 
-Read through these guidelines before you get started:
+1. [❓ Preguntas y Soporte](#-preguntas-y-soporte)
+2. [🐞 Reportar Bugs](#-reportar-bugs)
+3. [✨ Solicitud de Funciones](#-solicitud-de-funciones)
+4. [🔀 Enviar Pull Requests](#-enviar-pull-requests)
+5. [🛠️ Buenas Prácticas](#️-buenas-prácticas)
 
-1. [Questions & Concerns](#questions--concerns)
-2. [Issues & Bugs](#issues--bugs)
-3. [Feature Requests](#feature-requests)
-4. [Submitting Pull Requests](#submitting-pull-requests)
+---
 
-## Questions & Concerns
+# ❓ Preguntas y Soporte
 
-If you have any questions about using or developing for this project, reach out
-to @ridhwaans or send an [email][1].
+Si tienes dudas sobre el proyecto, necesitas ayuda para desarrollarlo o quieres proponer mejoras:
 
-## Issues & Bugs
+📧 **Contacto:** isaireyes.dev@gmail.com
 
-Submit an [issue][2] or [pull request][3] with a fix if you find any bugs in
-the project. See [below](#submitting-pull-requests) for instructions on sending
-in pull requests, and be sure to reference the [code style guide](#code-style)
-first!
+También puedes abrir un **Issue** en GitHub para discutir cualquier idea o problema.
 
-When submitting an issue or pull request, make sure you're as detailed as possible
-and fill in all answers to questions asked in the templates. For example, an issue
-that simply states "X/Y/Z isn't working!" will be closed.
+---
 
-## Feature Requests
+# 🐞 Reportar Bugs
 
-Submit an [issue][2] to request a new feature. Features fall into one of two
-categories:
+Si encuentras un error o comportamiento inesperado:
 
-1. **Major**: Major changes should be discussed with me via [email][1]. I'm
-   always open to suggestions and will get back to you as soon as I can.
-2. **Minor**: A minor feature can simply be added via a [pull request][3].
+1. Verifica primero si ya existe un Issue relacionado.
+2. Si no existe, crea uno nuevo describiendo:
+   - El problema
+   - Cómo reproducirlo
+   - Capturas de pantalla (si aplica)
+   - Sistema operativo y navegador/dispositivo
+   - Logs o errores de consola
 
-## Submitting Pull Requests
+## ✅ Buen ejemplo de reporte
 
-Before you do anything, make sure you check the current list of [pull requests][4]
-to ensure you aren't duplicating anyone's work. Then, do the following:
+```txt
+El reproductor deja de funcionar al cambiar rápidamente entre playlists.
+Sistema: Windows 11
+Navegador: Chrome 128
+```
 
-1. Fork the repository and make your changes in a git branch: `git checkout -b my-branch base-branch`
-2. Make sure your feature or fix doesn't break the project! Test thoroughly.
-3. Commit your changes, and please leave a detailed commit message.
-4. Push your branch to your forked repo on GitHub: `git push origin my-branch`
-5. [Submit a pull request][3]
-6. If any changes are requested by the project maintainers, please make them and follow
-   the steps until the changes are merged in.
+## ❌ Mal ejemplo
+```
+No funciona
+```
 
-[1]: mailto:shakeel.ridhwaan@gmail.com
-[2]: https://github.com/ridhwaans/homehost/issues/new
-[3]: https://github.com/ridhwaans/homehost/compare
-[4]: https://github.com/ridhwaans/homehost/pulls
+---
+
+## ✨ Solicitud de Funciones
+
+Puedes abrir un Issue proponiendo:
+
+- Nuevas características
+- Mejoras de UI/UX
+- Optimizaciones
+- Compatibilidad con nuevas plataformas
+- Mejoras de rendimiento
+
+---
+
+## 📌 Tipos de Features
+### 🔥 Grandes Cambios
+
+Primero deben discutirse mediante un Issue antes de desarrollarse.
+
+### ⚡ Cambios Pequeños
+
+Pueden enviarse directamente mediante un Pull Request.
+
+### 🔀 Enviar Pull Requests
+
+Antes de enviar un Pull Request:
+
+- Revisa los PR existentes para evitar trabajo duplicado.
+- Asegúrate de que tu código no rompa funcionalidades existentes.
+
+---
+
+## 📥 Pasos
+
+### 1️⃣ Haz un Fork del repositorio
+```
+git clone https://github.com/isairey/homehost.git
+```
+### 2️⃣ Crea una nueva rama
+```
+git checkout -b feature/nueva-funcionalidad
+```
+### 3️⃣ Realiza tus cambios
+
+- Mantén el código limpio
+- Sigue la estructura del proyecto
+- Usa nombres descriptivos
+
+### 4️⃣ Haz commit de tus cambios
+```
+git commit -m "feat: agrega soporte para playlists offline"
+```
+### 5️⃣ Sube los cambios
+```
+git push origin feature/nueva-funcionalidad
+```
+### 6️⃣ Abre un Pull Request
+
+Describe claramente:
+
+- Qué hiciste
+- Qué problema resuelve
+- Capturas si aplica
+- Issues relacionados
+
+---
+
+## 🛠️ Buenas Prácticas
+
+### ✅ Recomendaciones
+
+- [ ] Usa commits descriptivos
+- [ ] Mantén una estructura limpia
+- [ ] Comenta código complejo
+- [ ] Sigue las convenciones del proyecto
+- [ ] Prueba tus cambios antes de subirlos
+
+---
+
+## 📋 Checklist Antes de Enviar un PR
+
+ - El proyecto compila correctamente
+ - No existen errores en consola
+ - Probé los cambios manualmente
+ - Actualicé documentación si era necesario
+ - Mi código sigue el estilo del proyecto
+
+ ---
+ 
+## ❤️ Gracias por Contribuir
+
+Cada contribución ayuda a mejorar este proyecto y hacerlo crecer 🚀
+
+---
+
+## 👨‍💻 Autor
+
+**Isai Reyes**
+
+Desarrollador Full Stack enfocado en aplicaciones multimedia, streaming y software open source.
+
+⭐ ¡No olvides dejar una estrella al repositorio si te gustó el proyecto!
