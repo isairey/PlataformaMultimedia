@@ -119,23 +119,28 @@ directamente desde tu computadora o servidor hacia cualquier dispositivo conecta
 
 # ⚙️ Instalación
 
-# 🔹 Clonar el repositorio
+## 🔹 Clonar el repositorio
 
 ```bash
 git clone https://github.com/isairey/homehost.git
 cd homehost
-🔹 Instalar dependencias
+```
+## 🔹 Instalar dependencias
+```
 npm run install-packages
-🔹 Configurar variables de entorno
+```
+## 🔹 Configurar variables de entorno
 
 Crear los archivos .env necesarios:
 
-# CLIENT
+### CLIENT
+```
 REACT_APP_HOMEHOST_BASE="http://localhost:5000"
 REACT_APP_IMAGE_BASE="https://image.tmdb.org/t/p/"
 REACT_APP_IMDB_BASE="https://www.imdb.com"
-
-# SERVER
+```
+### SERVER
+```
 TMDB_KEY="YOUR_TMDB_KEY"
 
 SPOTIFY_CLIENT_ID="YOUR_CLIENT_ID"
@@ -148,8 +153,14 @@ MUSIC_PATH="/path/to/music"
 DATABASE_URL="file:./data/media.db"
 
 CLIENT_BASE_URL="http://localhost:3000"
-🚀 Ejecutar la aplicación
+```
+
+---
+
+# 🚀 Ejecutar la aplicación
+
 Desarrollo
+```
 npm run start
 Puertos por defecto
 Servicio	Puerto
@@ -157,18 +168,28 @@ Client	3000
 Server	5000
 Producción
 npm run start:prod
-🗄️ Base de datos
+```
+
+## 🗄️ Base de datos
+
 Crear migraciones
+```
 npm run db:migrate
 Explorar base de datos
 npm run db:browse
+```
 
 Abrir:
-
+```
 http://localhost:5555
+```
 Limpiar base de datos
+```
 npm run db:clear
-📂 Organización multimedia
+```
+
+# 📂 Organización multimedia
+```
 🎥 Películas
 Movies/
  └── Movie Name <TMDB-ID>.mkv
@@ -180,7 +201,13 @@ TV/
 Music/
  └── Album Name <Spotify-ID>/
       └── 01 Song.mp3
-🌐 API Routes
+
+```
+
+---
+
+# 🌐 API Routes
+
 🎥 Películas
 GET /api/movies
 GET /api/movies/:id
@@ -197,25 +224,36 @@ GET /api/music/songs
 🐳 Docker
 Ejecutar rápidamente con Docker
 docker compose up
-📊 Roadmap
- Aplicación móvil Android/iOS
- Descarga offline
- Multiusuario
- Streaming remoto
- Integración con Chromecast
- Sistema de recomendaciones
- Temas personalizados
- Aplicación de escritorio
-🤝 Contribuciones
+
+---
+
+# 📊 Roadmap
+
+- Aplicación móvil Android/iOS
+- Descarga offline
+- Multiusuario
+- Streaming remoto
+- Integración con Chromecast
+- Sistema de recomendaciones
+- Temas personalizados
+- Aplicación de escritorio
+
+ ---
+ 
+# 🤝 Contribuciones
 
 Las contribuciones son bienvenidas.
 
-Pasos
+```
 git checkout -b feature/nueva-funcion
 git commit -m "Nueva funcionalidad"
 git push origin feature/nueva-funcion
+```
 
 Luego abre un Pull Request 🚀
 
-👨‍💻 Autor
+---
+
+# 👨‍💻 Autor
+
 <p align="center"> <img src="https://github.com/isairey.png" width="120" style="border-radius:50%;" /> </p> <p align="center"> <b>Isai Reyes</b> </p> <p align="center"> Desarrollador Full Stack apasionado por el streaming multimedia, servidores self-hosted y aplicaciones modernas. </p>
